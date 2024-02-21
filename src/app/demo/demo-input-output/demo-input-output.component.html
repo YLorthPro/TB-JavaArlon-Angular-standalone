@@ -1,0 +1,8 @@
+<h4>Parent</h4>
+<tr *ngFor="let j of javanais">
+  {{j}}
+</tr>
+
+<h4>Enfant</h4>
+<app-enfant [liste]="javanais"
+            (ajouter)="ajouterAuParent($event)"></app-enfant>

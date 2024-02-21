@@ -1,0 +1,6 @@
+<div>
+  <tr *ngFor="let p of listeEntiere">{{p}}</tr>
+</div>
+
+<input type="text" [(ngModel)]="valeur">
+<input type="button" (click)="ajouterMachin()" value="ajouter">

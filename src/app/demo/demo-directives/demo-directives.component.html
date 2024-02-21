@@ -1,0 +1,49 @@
+<h1>Directives</h1>
+<h3>Component directives</h3>
+<div [ngStyle]="{'color' : couleur, 'font-size': fontSize+'px'}">
+  <select [(ngModel)]="fontSize">
+    <option>12</option>
+    <option>14</option>
+    <option>20</option>
+  </select>
+
+  <p>coucou</p>
+</div>
+
+<div [ngClass]="{'nomClasse': isBordered}">
+  <input type="checkbox" [(ngModel)]="isBordered" id="demo-ng-class">
+  <label for="demo-ng-class">activation nomClasse</label>
+</div>
+
+<!-- Dans une div -->
+<h3>Structural directives</h3>
+<div *ngIf="isBordered">
+  je suis actif!
+</div>
+
+<!-- Sans div -->
+<ng-template *ngIf="isBordered">
+  je suis actif!
+</ng-template>
+
+<!-- Angular 17 -->
+@if (isBordered){
+  je suis actif!
+}
+
+<div>
+  <p *ngFor="let personne of javanais"> {{personne.nom}} - {{personne.age}} ans </p>
+</div>
+
+<div>
+  <p *ngFor="let personne of javanais; index as i"> {{i + " " + personne.nom}}</p>
+</div>
+
+<!-- Angular 17 (besoin d'un "compteur") et apparition du @empty qui s'affichera si la collection est vide-->
+@for ( p of javanais; track p){
+  {{p.age}}
+} @empty {
+  la liste est vide
+}
+
+<div surlignage>Customs Directives</div>
